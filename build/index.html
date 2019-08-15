@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+
+    <link rel="stylesheet" href="css/style.min.css">
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <ul class="lists"></ul>
+
+        <form name="form-message" class="form-message">
+            <textarea name="message" class="text-message m-top-bottom" placeholder="Message"></textarea>
+            <button name="submit" class="btn send-message plum-place" disabled>Send</button>
+        </form>
+    </div>
+
+    <ul class="users-lists"></ul>
+
+    <div class="modal-window">
+        <div class="modal-body">
+            <div class="modal-user-info">
+                <h3 class="modal-title">Your <span>chat</span> name</h3>
+                <form name="get-login" action="#" method="GET">
+                    <input class="login m-top-bottom" type="text" name="login" placeholder="Login ... " />
+                    <button class="btn btn-login mountain-rock">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <audio class="message-notification" src="audio/audio.mp3" hidden></audio>
+
+    <script src="js/main-min.js"></script>
+
+</body>
+</html>
