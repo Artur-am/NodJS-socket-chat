@@ -1,5 +1,5 @@
 # NodJS Chat 
-
+<a href="https://chat-nodjs.herokuapp.com/">Demo<a/>
 <h3>Для cборки чата</h3>
 <p>Заходим в папку <strong>Gulp</strong> <em>(в терминале)</em> и устанавливаем <strong>node_modules</strong> <em>npm install</em> и собираем проект, водим в терминал <strong>gulp build</strong>.</p>
 
