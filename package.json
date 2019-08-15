@@ -1,0 +1,30 @@
+{
+  "name": "nodjs-socket-chat",
+  "version": "1.0.0",
+  "description": "nodjs socket chat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "nodjs",
+    "socket",
+    "chat"
+  ],
+  "author": "Arthur",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "path": "*",
+    "socket.io": "*"
+  },
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  }
+}

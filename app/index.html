@@ -13,7 +13,6 @@
 <!-- @if NODE_ENV='watch' -->
     <link rel="stylesheet" href="css/style.css">
 <!-- @endif -->
-    <script src="http://localhost:8888/socket.io/socket.io.js"></script>
 </head>
 <body>
 
@@ -40,8 +39,7 @@
         </div>
     </div>
 
-    <ul class="users-lists"></ul>
-
+    <audio class="message-notification" src="audio/audio.mp3" hidden></audio>
 
 <!-- @if NODE_ENV='build' -->
     <script src="js/main-min.js"></script>

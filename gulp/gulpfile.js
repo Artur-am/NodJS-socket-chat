@@ -30,6 +30,9 @@ let projectPaths = {
         ],
         "js" : [
             lib + "js/main.js"
+        ],
+        "audio" : [
+            lib + "audio/*.mp3"
         ]
     },
     "watch" : {
@@ -40,14 +43,18 @@ let projectPaths = {
             lib + "css/*.styl"
         ],
         "js" : [
-            lib + "/js/*.js",
-            lib + "/js/**/*.js"
+            lib + "js/*.js",
+            lib + "js/**/*.js"
+        ],
+        "audio" : [
+            lib + "audio/*.mp3"
         ]
     },
     "dist" : {
         html: buildPath,
-        css: buildLib + "/css/",
-        js: buildLib + "/js/",
+        css: buildLib + "css/",
+        js: buildLib + "js/",
+        audio: buildLib + "audio/"
     },
     "clean" : buildPath
 };
@@ -101,6 +108,10 @@ function JsBuild(){
             .pipe( reload( { stream: true } ) )
             .pipe( gulp.dest( projectPaths.dist.js ) );
 }
+function Audio(){
+    return gulp.src(projectPaths.app.audio)
+            .pipe(gulp.dest(projectPaths.dist.audio));
+}
 
 function StylusBuild(){
     return gulp.src( projectPaths.app.css )
@@ -140,6 +151,7 @@ function WatchFiles(){
     watch( projectPaths.watch.html, Html );
     watch( projectPaths.watch.css, css );
     watch( projectPaths.watch.js, JsBuild );
+    watch( projectPaths.watch.audio, Audio );
 }
 
 let css = gulp.series( StylusBuild, CssBuild );
@@ -147,10 +159,11 @@ let css = gulp.series( StylusBuild, CssBuild );
 gulp.task( "html", Html );
 gulp.task( "html:build", HtmlBuild );
 gulp.task( "js:build", JsBuild );
+gulp.task( "audio:build", Audio );
 gulp.task( "styles:build", StylusBuild );
 gulp.task( "css:build", css );
 
-gulp.task( "build", gulp.series( HtmlBuild, JsBuild, css ) );
+gulp.task( "build", gulp.series( HtmlBuild, JsBuild, Audio, css ) );
 gulp.task( "watch", gulp.parallel( WatchFiles, Webserver ) );
 gulp.task( "webserver", Webserver );
 

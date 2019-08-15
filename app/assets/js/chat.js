@@ -7,6 +7,8 @@ function Chat(){
         this.login = userLogin;
         this.message = form.message.value;
         this.date = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        
+        form.message.value = "";
     }
 
     function NewMessage(messageObject){
@@ -25,6 +27,10 @@ function Chat(){
     }
 
     socket.on("message", NewMessage);
+    socket.on("other-message", function(messageObject){
+        MessageNotification();
+        NewMessage(messageObject);
+    });
     document.forms["form-message"].addEventListener("submit", SendMessage);
 
 }

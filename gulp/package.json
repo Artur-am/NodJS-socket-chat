@@ -23,17 +23,18 @@
   "homepage": "https://github.com/Artur-am/NodJS-socket-chat#readme",
   "dependencies": {
     "express": "*",
-    "socket.io": "*",
-    "gulp-cli": "*",
-    "gulp-style-modules": "*"
+    "gulp": "*",
+    "path": "*",
+    "socket.io": "*"
   },
   "devDependencies": {
     "browser-sync": "*",
-    "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-cache": "*",
     "gulp-concat": "*",
     "gulp-imagemin": "*",
+    "gulp-cli": "*",
+    "gulp-style-modules": "*",
     "gulp-minify": "*",
     "gulp-minify-css": "*",
     "gulp-minify-html": "*",

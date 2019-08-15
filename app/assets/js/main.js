@@ -1,5 +1,5 @@
 let userLogin = "";
-let socket = io.connect("http://localhost:8888");
+let socket = null;
 
 function Connecte(){
     document.forms["form-message"].elements.submit.removeAttribute("disabled");
@@ -10,10 +10,14 @@ function Disconnect(){
 }
 
 //= ./functions/create.js
+//= ./functions/message-notification.js
 
 //= ./chat.js
 
 (function(){
+    
+    //= functions/scriptSrc.js
+
     if("undefined" !== typeof(Storage)){
         userLogin = localStorage.getItem('login');
         if(userLogin){
@@ -41,7 +45,8 @@ function Disconnect(){
 
 
 window.addEventListener("load", function(){
-    
+    socket = io();
+
     socket.on("conected", Connecte);
     socket.on("disconnect", Disconnect);
 
